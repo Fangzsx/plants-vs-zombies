@@ -5,15 +5,19 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
 
-    private Transform[] points;
+    private Transform[] spawnPoints;
+    private Transform[] pursuePoints;
     private Transform randomPoint;
+    public static Transform laneToPush;
+    
+    public GameObject zombiePrefab;
     private float timeBetweenSpawn = 3f;
     public float countdown = 0f;
-    public GameObject zombiePrefab;
 
     private void Start()
     {
-        points = SpawnPoint.points;
+        spawnPoints = SpawnPoint.points;
+        pursuePoints = PursuePoint.points;
     }
 
     // Update is called once per frame
@@ -30,9 +34,11 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator RandomSpawn()
     {
-        int randomIndex = Random.Range(0, points.Length);
-        randomPoint = points[randomIndex];
+        int randomIndex = Random.Range(0, spawnPoints.Length);
+        randomPoint = spawnPoints[randomIndex];
+        laneToPush = pursuePoints[randomIndex];
         Debug.Log("Random Spawn Point" + randomPoint);
+        Debug.Log("Lane to push Point" + laneToPush);
         SpawnZombie();
         yield return new WaitForSeconds(0.5f);
 

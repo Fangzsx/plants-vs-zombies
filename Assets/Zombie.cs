@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Transform target;
+
+    public float movementSpeed = 10f;
+
+    private void Start()
     {
-        
+        target = WaveSpawner.laneToPush;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        Vector3 direction = target.position - transform.position;
+        transform.Translate(direction.normalized * movementSpeed * Time.deltaTime, Space.World);
+
     }
+
+
 }
