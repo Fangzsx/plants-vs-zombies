@@ -11,7 +11,7 @@ public class WaveSpawner : MonoBehaviour
     public static Transform laneToPush;
     
     public GameObject zombiePrefab;
-    private float timeBetweenSpawn = 3f;
+    private float timeBetweenSpawn = 5f;
     public float countdown = 0f;
 
     private void Start()
