@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5378119999622482219}
   - component: {fileID: 2802581607197031795}
   - component: {fileID: 2497121703101628123}
-  - component: {fileID: 7675966308268786870}
+  - component: {fileID: 3759198243584481699}
+  - component: {fileID: 1133502272}
   m_Layer: 0
   m_Name: node
   m_TagString: Untagged
@@ -80,7 +81,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7675966308268786870
+--- !u!114 &3759198243584481699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754112247165052020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3786f290a62813c45937bdba3b9c16bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.5377358, g: 0.49968848, b: 0.49968848, a: 0}
+--- !u!65 &1133502272
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
