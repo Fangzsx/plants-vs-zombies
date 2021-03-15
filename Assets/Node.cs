@@ -28,7 +28,10 @@ public class Node : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        rend.material.color = hoverColor;
+        if (plant == null)
+        {
+            rend.material.color = hoverColor;
+        }
     }
 
     private void OnMouseExit()
@@ -38,6 +41,13 @@ public class Node : MonoBehaviour
 
     private void OnMouseDown()
     {
+
+        if(plant != null)
+        {
+            Debug.Log("Cannot plant on occupied node!");
+            return;
+        }
+
         GameObject plantToSet = PlantManager.Instance.getPlant();
         plant = (GameObject)Instantiate(plantToSet, transform.position + positionOffset, transform.rotation);   
     }
