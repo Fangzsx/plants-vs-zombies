@@ -49,6 +49,13 @@ public class PeaShooter : MonoBehaviour
         {
             target = nearestZombie.transform;
             Debug.Log(gameObject + "nearest enemy " + target);
+
+            //shoot target
+            //create bullet.cs
+            //create a private variable target
+            //create a public method seek, pass in transform as parameter
+            //set the private variable target = the transform target in parameter
+
         }
 
     }
