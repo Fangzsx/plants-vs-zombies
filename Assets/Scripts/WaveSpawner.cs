@@ -37,8 +37,6 @@ public class WaveSpawner : MonoBehaviour
         int randomIndex = Random.Range(0, spawnPoints.Length);
         randomPoint = spawnPoints[randomIndex];
         laneToPush = pursuePoints[randomIndex];
-        Debug.Log("Random Spawn Point" + randomPoint);
-        Debug.Log("Lane to push Point" + laneToPush);
         SpawnZombie();
         yield return new WaitForSeconds(0.5f);
 
@@ -46,7 +44,6 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnZombie()
     {
-        Debug.Log("Zombie Spawned!");
         Instantiate(zombiePrefab, randomPoint.position, randomPoint.rotation);
     }
 }

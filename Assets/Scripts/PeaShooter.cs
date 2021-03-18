@@ -35,28 +35,29 @@ public class PeaShooter : MonoBehaviour
             
             if (transform.position.z == zombie.transform.position.z)
             {
-
                 float distanceToZombie = Vector3.Distance(transform.position, zombie.transform.position);
                 if(distanceToZombie < shortestDistance)
                 {
+                    shortestDistance = distanceToZombie;
                     nearestZombie = zombie;
                 }
-
             }
+
         }
 
         if(nearestZombie != null && shortestDistance <= shootingRange)
         {
             target = nearestZombie.transform;
-            Debug.Log(gameObject + "nearest enemy " + target);
+            
+            Debug.Log("zombie found at " + transform.position.z);
+            Debug.Log("zombie name" + target.position);
 
-            //shoot target
-            //create bullet.cs
-            //create a private variable target
-            //create a public method seek, pass in transform as parameter
-            //set the private variable target = the transform target in parameter
-
+            
         }
+        else
+        {
+            target = null;
+        }    
 
     }
 }
