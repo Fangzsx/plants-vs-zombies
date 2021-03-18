@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7355073228213037230}
   - component: {fileID: 7856083580621888504}
   - component: {fileID: 6420353229835908203}
-  - component: {fileID: 2480837815837461431}
   - component: {fileID: -1479255015972730108}
   m_Layer: 0
   m_Name: pea shooter
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2480837815837461431
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4395818542711035048}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-1479255015972730108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +93,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369f93d33634ae8499965d3260e0822e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pelletPrefab: {fileID: 8390842577199963252, guid: 3e7cf02d0c3670c4b8c80d877e92cca5,
+    type: 3}
+  firePoint: {fileID: 6676115856819031931}
+  shootingRange: 45
+  fireCountdown: 0
+  fireRate: 1
 --- !u!1 &6895584836819438406
 GameObject:
   m_ObjectHideFlags: 0

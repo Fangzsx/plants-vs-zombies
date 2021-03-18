@@ -7,7 +7,49 @@ public class PeaShooter : MonoBehaviour
 
     private Transform target;
 
-    public float shootingRange = 5f;
+    public GameObject pelletPrefab;
+    public Transform firePoint;
+    public float shootingRange = 45f;
+    public float fireCountdown = 0f; //time between shoot
+    public float fireRate = 1f;
+
+
+
+    void Start()
+    {
+        InvokeRepeating(nameof(UpdateTarget), 0f, 0.5f);
+    }
+
+
+    private void Update()
+    {
+        if(target == null)
+        {
+            return;
+        }
+
+        if(fireCountdown <= 0)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+
+        fireCountdown -= Time.deltaTime;
+
+    }
+
+    void Shoot()
+    {
+        GameObject pelletGO = (GameObject)Instantiate(pelletPrefab, firePoint.position, firePoint.rotation);
+        Pellet pellet = pelletGO.GetComponent<Pellet>();
+
+        if(pellet != null)
+        {
+            pellet.Seek(target);
+        }
+
+    }
+
 
     private void OnDrawGizmosSelected()
     {
@@ -15,14 +57,6 @@ public class PeaShooter : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, shootingRange);
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        InvokeRepeating(nameof(UpdateTarget), 0f, 0.5f);
-    }
-
-    // Update is called once per frame
     void UpdateTarget()
     {
         GameObject[] zombies = GameObject.FindGameObjectsWithTag("zombie");
@@ -48,11 +82,6 @@ public class PeaShooter : MonoBehaviour
         if(nearestZombie != null && shortestDistance <= shootingRange)
         {
             target = nearestZombie.transform;
-            
-            Debug.Log("zombie found at " + transform.position.z);
-            Debug.Log("zombie name" + target.position);
-
-            
         }
         else
         {

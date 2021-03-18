@@ -27,13 +27,19 @@ public class Pellet : MonoBehaviour
         Vector3 direction = target.position - transform.position;
         float distanceThisFrame = bulletSpeed * Time.deltaTime;
 
-        if(distanceThisFrame <= direction.magnitude)
+        if(direction.magnitude < distanceThisFrame)
         {
-            Debug.Log("Zombie hit!");
-            return;
+            HitTarget();
         }
 
-        transform.Translate(direction.normalized * bulletSpeed, Space.World);
 
+        transform.Translate(direction.normalized * distanceThisFrame, Space.World);
+
+    }
+
+
+    void HitTarget()
+    {
+        Destroy(gameObject);
     }
 }
