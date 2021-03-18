@@ -40,6 +40,8 @@ public class PeaShooter : MonoBehaviour
 
     void Shoot()
     {
+        
+
         GameObject pelletGO = (GameObject)Instantiate(pelletPrefab, firePoint.position, firePoint.rotation);
         Pellet pellet = pelletGO.GetComponent<Pellet>();
 
@@ -48,13 +50,6 @@ public class PeaShooter : MonoBehaviour
             pellet.Seek(target);
         }
 
-    }
-
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, shootingRange);
     }
 
     void UpdateTarget()
@@ -68,7 +63,8 @@ public class PeaShooter : MonoBehaviour
         {
             
             if (transform.position.z == zombie.transform.position.z)
-            {
+            {   
+
                 float distanceToZombie = Vector3.Distance(transform.position, zombie.transform.position);
                 if(distanceToZombie < shortestDistance)
                 {
