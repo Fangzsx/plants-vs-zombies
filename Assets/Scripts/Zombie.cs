@@ -11,6 +11,11 @@ public class Zombie : MonoBehaviour
     private void Start()
     {
         target = WaveSpawner.laneToPush;
+        int randomFactor = Random.Range(0, 2);
+        if (randomFactor == 1)
+        {
+            movementSpeed = 15f;
+        }
     }
 
     private void Update()

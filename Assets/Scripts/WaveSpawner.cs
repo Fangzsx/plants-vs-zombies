@@ -44,6 +44,7 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnZombie()
     {
+        Debug.Log("Zombie Spawned!");
         Instantiate(zombiePrefab, randomPoint.position, randomPoint.rotation);
     }
 }
