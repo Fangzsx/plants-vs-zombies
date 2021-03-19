@@ -66,10 +66,11 @@ public class PeaShooter : MonoBehaviour
             {   
 
                 float distanceToZombie = Vector3.Distance(transform.position, zombie.transform.position);
-                if(distanceToZombie < shortestDistance)
+                if(distanceToZombie < shortestDistance )
                 {
                     shortestDistance = distanceToZombie;
                     nearestZombie = zombie;
+
                 }
             }
 
