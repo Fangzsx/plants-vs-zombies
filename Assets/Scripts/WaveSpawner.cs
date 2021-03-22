@@ -12,7 +12,7 @@ public class WaveSpawner : MonoBehaviour
     public static Transform laneToPush;
     
     public GameObject zombiePrefab;
-    public float yOffset = 0.6f;
+    public float yOffset = 2.3f;
     
     public float countdown = 0f;
 

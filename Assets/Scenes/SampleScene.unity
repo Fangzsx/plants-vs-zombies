@@ -1906,6 +1906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombiePrefab: {fileID: 2353306364936779424, guid: 14fb5432103f06447bc25ba37fd6d6a0,
     type: 3}
+  yOffset: 0.5
   countdown: 0
 --- !u!4 &1006790889
 Transform:
