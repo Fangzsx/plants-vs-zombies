@@ -9,6 +9,7 @@ public class Zombie : MonoBehaviour
     public float movementSpeed = 10f;
     public int health = 3;
 
+
     private void Start()
     {
         target = WaveSpawner.laneToPush;
@@ -22,10 +23,6 @@ public class Zombie : MonoBehaviour
     private void Update()
     {
 
-        if(health <0)
-        {
-            Destroy(gameObject);
-        }
 
         Vector3 direction = target.position - transform.position;
         transform.Translate(direction.normalized * movementSpeed * Time.deltaTime, Space.World);
@@ -40,10 +37,7 @@ public class Zombie : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("We hit something");
-    }
+   
 
 
 }
