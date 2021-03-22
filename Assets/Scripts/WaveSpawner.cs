@@ -8,10 +8,12 @@ public class WaveSpawner : MonoBehaviour
     private Transform[] spawnPoints;
     private Transform[] pursuePoints;
     private Transform randomPoint;
+    private float timeBetweenSpawn = 5f;
     public static Transform laneToPush;
     
     public GameObject zombiePrefab;
-    private float timeBetweenSpawn = 5f;
+    public float yOffset = 0.6f;
+    
     public float countdown = 0f;
 
     private void Start()
@@ -44,7 +46,10 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnZombie()
     {
+
+        Vector3 position = new Vector3(randomPoint.transform.position.x, randomPoint.transform.position.y + yOffset, randomPoint.transform.position.z);
+
         Debug.Log("Zombie Spawned!");
-        Instantiate(zombiePrefab, randomPoint.position, randomPoint.rotation);
+        Instantiate(zombiePrefab, position, randomPoint.rotation);
     }
 }

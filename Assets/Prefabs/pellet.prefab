@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4266112620810024061}
   - component: {fileID: 731040400078410048}
   - component: {fileID: 7595936402560308645}
+  - component: {fileID: -5750044201939845562}
   m_Layer: 0
   m_Name: pellet
   m_TagString: Untagged
@@ -93,3 +94,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 60
+--- !u!135 &-5750044201939845562
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390842577199963252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.50848055
+  m_Center: {x: 0, y: 0.008480549, z: 0}

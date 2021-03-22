@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7861561820223630943}
   - component: {fileID: 6810123737613048819}
   - component: {fileID: 1323198806140434255}
-  - component: {fileID: 8839645909478185403}
   - component: {fileID: 7909440478350105847}
+  - component: {fileID: 1823646003942556687}
   m_Layer: 0
   m_Name: zombie
   m_TagString: zombie
@@ -81,19 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &8839645909478185403
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2353306364936779424}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7909440478350105847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,3 +94,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
+  health: 3
+--- !u!135 &1823646003942556687
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2353306364936779424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5143077
+  m_Center: {x: 0, y: 0.0047693253, z: 0}
