@@ -30,6 +30,7 @@ public class PeaShooter : MonoBehaviour
 
         if(fireCountdown <= 0)
         {
+
             Shoot();
             fireCountdown = 1f / fireRate;
         }

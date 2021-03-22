@@ -23,10 +23,12 @@ public class Zombie : MonoBehaviour
         Vector3 direction = target.position - transform.position;
         transform.Translate(direction.normalized * movementSpeed * Time.deltaTime, Space.World);
 
-        if(transform.position == target.position)
+        if(transform.position.x <= target.position.x)
         {
-            Debug.Log("Zombie ate your brain!");
             Destroy(gameObject);
+            Debug.Log("Zombie ate your brain!");
+            target = null;
+            
         }
 
     }
