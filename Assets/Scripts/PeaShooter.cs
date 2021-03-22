@@ -77,7 +77,7 @@ public class PeaShooter : MonoBehaviour
 
         }
 
-        if(nearestZombie != null && shortestDistance <= shootingRange)
+        if(nearestZombie != null && shortestDistance <= shootingRange && nearestZombie.transform.position.x > transform.position.x)
         {
             target = nearestZombie.transform;
         }
