@@ -41,8 +41,7 @@ public class PeaShooter : MonoBehaviour
 
     void Shoot()
     {
-        
-
+       
         GameObject pelletGO = (GameObject)Instantiate(pelletPrefab, firePoint.position, firePoint.rotation);
         Pellet pellet = pelletGO.GetComponent<Pellet>();
 

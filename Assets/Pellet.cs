@@ -15,14 +15,17 @@ public class Pellet : MonoBehaviour
     }
 
 
+
     private void Update()
     {
+
+        
+
         if(target == null)
         {
             Destroy(gameObject);
             return;
         }
-
 
         Vector3 direction = target.position - transform.position;
         float distanceThisFrame = bulletSpeed * Time.deltaTime;

@@ -17,7 +17,7 @@ public class PlantManager : MonoBehaviour
     }
 
     //return the plant to set
-    public GameObject getPlant()
+    public GameObject GetPlant()
     {
         return plantPrefab;
     }

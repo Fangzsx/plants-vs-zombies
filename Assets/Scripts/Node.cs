@@ -48,7 +48,7 @@ public class Node : MonoBehaviour
             return;
         }
 
-        GameObject plantToSet = PlantManager.Instance.getPlant();
+        GameObject plantToSet = PlantManager.Instance.GetPlant();
         plant = (GameObject)Instantiate(plantToSet, transform.position + positionOffset, transform.rotation);   
     }
 }

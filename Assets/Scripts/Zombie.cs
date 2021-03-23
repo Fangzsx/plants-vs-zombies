@@ -18,11 +18,11 @@ public class Zombie : MonoBehaviour
         {
             movementSpeed = 15f;
         }
+
     }
 
     private void Update()
     {
-
 
         Vector3 direction = target.position - transform.position;
         transform.Translate(direction.normalized * movementSpeed * Time.deltaTime, Space.World);
