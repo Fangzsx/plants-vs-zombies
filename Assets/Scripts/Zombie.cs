@@ -7,7 +7,7 @@ public class Zombie : MonoBehaviour
     private Transform target;
 
     public float movementSpeed = 10f;
-    public int health = 3;
+    private int health = 3;
 
 
     private void Start()
@@ -24,6 +24,12 @@ public class Zombie : MonoBehaviour
     private void Update()
     {
 
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("zombie died");
+        }
+
         Vector3 direction = target.position - transform.position;
         transform.Translate(direction.normalized * movementSpeed * Time.deltaTime, Space.World);
 
@@ -37,7 +43,16 @@ public class Zombie : MonoBehaviour
 
     }
 
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("pellet"))
+        {
+            health--;
+            Debug.Log("collision detected");
+        }
+    }
+
+
 
 
 }
