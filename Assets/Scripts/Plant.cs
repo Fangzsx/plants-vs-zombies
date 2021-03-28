@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PeaShooter : MonoBehaviour
+public class Plant : MonoBehaviour
 {
 
     private Transform target;

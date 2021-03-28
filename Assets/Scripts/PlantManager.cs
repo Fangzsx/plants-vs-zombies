@@ -3,7 +3,10 @@
 public class PlantManager : MonoBehaviour
 {
     public static PlantManager Instance;
-    public GameObject plantPrefab;
+    private GameObject _plant;
+    public GameObject peaShooter;
+    public GameObject firePeaShooter;
+    public GameObject icePeaShooter;
 
     private void Awake()
     {
@@ -19,7 +22,12 @@ public class PlantManager : MonoBehaviour
     //return the plant to set
     public GameObject GetPlant()
     {
-        return plantPrefab;
+        return _plant;
+    }
+
+    public void SetPlant(GameObject plant)
+    {
+        _plant = plant;
     }
 
 }
