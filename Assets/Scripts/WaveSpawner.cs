@@ -49,7 +49,6 @@ public class WaveSpawner : MonoBehaviour
 
         Vector3 position = new Vector3(randomPoint.transform.position.x, randomPoint.transform.position.y + yOffset, randomPoint.transform.position.z);
 
-        Debug.Log("Zombie Spawned!");
         Instantiate(zombiePrefab, position, randomPoint.rotation);
     }
 }
