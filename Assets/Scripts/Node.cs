@@ -36,16 +36,25 @@ public class Node : MonoBehaviour
     private void OnMouseDown()
     {
 
+        if(plantManager.GetPlant() == null)
+        {
+            Debug.Log("Please set a plant first!");
+            return;
+        }
+
 
         if(plant != null)
         {
             Debug.Log("Cannot plant on occupied node!");
             return;
         }
+        else
+        {
+            GameObject plantToSet = plantManager.GetPlant();
+            plant = (GameObject)Instantiate(plantToSet, transform.position + positionOffset, transform.rotation);
+        }
 
-
-        GameObject plantToSet = plantManager.GetPlant();
-        plant = (GameObject)Instantiate(plantToSet, transform.position + positionOffset, transform.rotation);
+        
         
 
            

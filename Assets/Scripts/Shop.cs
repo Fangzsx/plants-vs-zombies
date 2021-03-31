@@ -12,6 +12,7 @@ public class Shop : MonoBehaviour
     void Start()
     {
         plantManager = PlantManager.Instance;
+        
     }
 
     // Update is called once per frame
