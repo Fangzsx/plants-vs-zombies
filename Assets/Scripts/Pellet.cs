@@ -18,9 +18,6 @@ public class Pellet : MonoBehaviour
 
     private void Update()
     {
-
-        
-
         if(target == null)
         {
             Destroy(gameObject);
