@@ -47,7 +47,9 @@ public class Plant : MonoBehaviour
 
         if(pellet != null)
         {
+            pellet.GetComponent<Renderer>().material.color = gameObject.GetComponent<Renderer>().material.color;
             pellet.Seek(target);
+
         }
 
     }
