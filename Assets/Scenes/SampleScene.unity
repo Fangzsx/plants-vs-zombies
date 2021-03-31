@@ -2581,6 +2581,7 @@ MonoBehaviour:
     type: 3}
   icePeaShooter: {fileID: 4395818542711035048, guid: 1231f07544d40e344a7f5b520ecca33a,
     type: 3}
+  hasSelectedPlant: 0
 --- !u!4 &1036456286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8251504580119779992, guid: 43ec5ffcc6a8481408fcd454c532418b,
