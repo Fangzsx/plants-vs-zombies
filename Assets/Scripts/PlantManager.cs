@@ -7,6 +7,7 @@ public class PlantManager : MonoBehaviour
     public GameObject peaShooter;
     public GameObject firePeaShooter;
     public GameObject icePeaShooter;
+    public bool hasSelectedPlant = false;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class PlantManager : MonoBehaviour
     public void SetPlant(GameObject plant)
     {
         _plant = plant;
+        hasSelectedPlant = true;
     }
 
 }

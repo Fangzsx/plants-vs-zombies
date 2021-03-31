@@ -36,7 +36,7 @@ public class Node : MonoBehaviour
     private void OnMouseDown()
     {
 
-        if(plantManager.GetPlant() == null)
+        if(!plantManager.hasSelectedPlant)
         {
             Debug.Log("Please set a plant first!");
             return;
@@ -53,11 +53,11 @@ public class Node : MonoBehaviour
             GameObject plantToSet = plantManager.GetPlant();
             plant = (GameObject)Instantiate(plantToSet, transform.position + positionOffset, transform.rotation);
         }
+    }
 
-        
-        
-
-           
+    private void OnMouseUp()
+    {
+        plantManager.hasSelectedPlant = false;
     }
 
 }
