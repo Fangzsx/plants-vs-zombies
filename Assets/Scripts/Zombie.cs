@@ -24,11 +24,7 @@ public class Zombie : MonoBehaviour
     private void Update()
     {
 
-        if(health <= 0)
-        {
-            Destroy(gameObject);
-            Debug.Log("zombie died");
-        }
+        
 
         Vector3 direction = target.position - transform.position;
         transform.Translate(direction.normalized * movementSpeed * Time.deltaTime, Space.World);
@@ -49,6 +45,13 @@ public class Zombie : MonoBehaviour
         {
             health--;
             Debug.Log("collision detected");
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+                Debug.Log("zombie died");
+            }
+
+
         }
     }
 
