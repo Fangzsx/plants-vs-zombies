@@ -5,11 +5,17 @@ using UnityEngine;
 public class Pellet : MonoBehaviour
 {
     private Transform target;
+    private Renderer rend;
+    
 
     public float bulletSpeed = 60f;
     public GameObject hitEffect;
-    private ParticleSystem.MainModule ps;
-    private Renderer rend;
+
+
+    private void Start()
+    {
+        rend = GetComponent<Renderer>();
+    }
 
 
     public void Seek(Transform _target)
@@ -18,19 +24,11 @@ public class Pellet : MonoBehaviour
     }
 
 
-    private void Start()
-    {
-        ps = hitEffect.GetComponent<ParticleSystem>().main;
-        rend = GetComponent<Renderer>();
-        
-
-    }
 
 
     private void Update()
     {
-
-        ps.startColor = rend.material.color;
+        
 
         if(target == null)
         {
@@ -54,6 +52,9 @@ public class Pellet : MonoBehaviour
 
     void HitTarget()
     {
+
+        hitEffect.GetComponent<ParticleSystem>().GetComponent<Renderer>().sharedMaterial.color = rend.material.color;
+
         Instantiate(hitEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
