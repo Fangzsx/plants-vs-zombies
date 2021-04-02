@@ -65,7 +65,7 @@ public class Zombie : MonoBehaviour
             else
             {
                 //return to default material
-                Invoke(nameof(ResetMaterial), 0.05f);
+                Invoke(nameof(ResetMaterial), 0.35f);
             }
         }
         
