@@ -55,7 +55,8 @@ public class Pellet : MonoBehaviour
 
         hitEffect.GetComponent<ParticleSystem>().GetComponent<Renderer>().sharedMaterial.color = rend.material.color;
 
-        Instantiate(hitEffect, transform.position, transform.rotation);
+        GameObject hitEffectGO = (GameObject)Instantiate(hitEffect, transform.position, transform.rotation);
         Destroy(gameObject);
+        Destroy(hitEffectGO, 1f);
     }
 }
