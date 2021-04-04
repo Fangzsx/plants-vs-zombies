@@ -14,7 +14,7 @@ public class Pellet : MonoBehaviour
 
     private void Start()
     {
-        rend = GetComponent<Renderer>();
+        hitEffect.GetComponent<ParticleSystem>().GetComponent<Renderer>().sharedMaterial.color = GetComponent<Renderer>().material.color;
     }
 
 
@@ -53,8 +53,7 @@ public class Pellet : MonoBehaviour
     void HitTarget()
     {
 
-        hitEffect.GetComponent<ParticleSystem>().GetComponent<Renderer>().sharedMaterial.color = rend.material.color;
-
+     
         GameObject hitEffectGO = (GameObject)Instantiate(hitEffect, transform.position, transform.rotation);
         Destroy(gameObject);
         Destroy(hitEffectGO, 1f);
