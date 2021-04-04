@@ -10,7 +10,7 @@ public class Zombie : MonoBehaviour
     private Renderer rend;
 
     public float movementSpeed = 10f;
-    private int health = 3;
+    private int health = 10;
     
 
     private void Start()
