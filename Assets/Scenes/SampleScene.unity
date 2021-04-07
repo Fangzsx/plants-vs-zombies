@@ -3381,6 +3381,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1200780347}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.87843144, g: 0.08627451, b: 0.08627451, a: 1}
+    key1: {r: 0.88454044, g: 1, b: 0.06132078, a: 1}
+    key2: {r: 0.30376846, g: 0.7075472, b: 0.1768868, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 23708
+    ctime1: 41441
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 32768
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  fill: {fileID: 740610023}
 --- !u!1001 &1213435082
 PrefabInstance:
   m_ObjectHideFlags: 0

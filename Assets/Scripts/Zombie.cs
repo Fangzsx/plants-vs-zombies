@@ -11,7 +11,6 @@ public class Zombie : MonoBehaviour
     private int maxHealth = 10;
 
     public float movementSpeed = 10f;
-    public Gradient gradient;
     public HealthBar healthBar;
     public int currentHealth;
     
