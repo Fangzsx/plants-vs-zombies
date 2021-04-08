@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Zombie : MonoBehaviour
 {
@@ -8,13 +9,19 @@ public class Zombie : MonoBehaviour
     private Material defaultMaterial;
     private Material whiteMaterial;
     private Renderer rend;
-    private readonly int health = 10;
+    public float health;
 
+
+    public float startHealth = 10f;
     public float movementSpeed = 10f;
+    public Image healthBar;
     
 
     private void Start()
     {
+        //set up health
+        health = startHealth;
+
         target = WaveSpawner.laneToPush;
         rend = GetComponent<Renderer>();
         defaultMaterial = rend.material;
@@ -53,13 +60,12 @@ public class Zombie : MonoBehaviour
     {
         if(other.gameObject.CompareTag("pellet"))
         {
-            
+            health--;
+            healthBar.fillAmount = health / startHealth;
 
 
             //change the material of game object to shot on hit effect
             rend.material = whiteMaterial;
-
-            Debug.Log("collision detected");
             if (health <= 0)
             {
                 Destroy(gameObject);
