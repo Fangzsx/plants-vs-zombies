@@ -8,11 +8,9 @@ public class Zombie : MonoBehaviour
     private Material defaultMaterial;
     private Material whiteMaterial;
     private Renderer rend;
-    private int maxHealth = 10;
+    private readonly int health = 10;
 
     public float movementSpeed = 10f;
-    public HealthBar healthBar;
-    public int currentHealth;
     
 
     private void Start()
@@ -30,9 +28,7 @@ public class Zombie : MonoBehaviour
         }
 
 
-        //health
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+       
 
     }
 
@@ -57,15 +53,14 @@ public class Zombie : MonoBehaviour
     {
         if(other.gameObject.CompareTag("pellet"))
         {
-            currentHealth--;
-            healthBar.SetHealth(currentHealth);
+            
 
 
             //change the material of game object to shot on hit effect
             rend.material = whiteMaterial;
 
             Debug.Log("collision detected");
-            if (currentHealth <= 0)
+            if (health <= 0)
             {
                 Destroy(gameObject);
                 Debug.Log("zombie died");
