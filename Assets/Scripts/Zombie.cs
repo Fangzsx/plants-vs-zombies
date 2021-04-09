@@ -9,9 +9,9 @@ public class Zombie : MonoBehaviour
     private Material defaultMaterial;
     private Material whiteMaterial;
     private Renderer rend;
+
+
     public float health;
-
-
     public float startHealth = 10f;
     public float movementSpeed = 10f;
     public Image healthBar;
@@ -25,6 +25,9 @@ public class Zombie : MonoBehaviour
         target = WaveSpawner.laneToPush;
         rend = GetComponent<Renderer>();
         defaultMaterial = rend.material;
+
+
+        //for hit flash effect
         whiteMaterial = Resources.Load("WhiteFlash", typeof(Material)) as Material;
         
         
@@ -54,6 +57,8 @@ public class Zombie : MonoBehaviour
             
         }
 
+        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -68,8 +73,10 @@ public class Zombie : MonoBehaviour
             rend.material = whiteMaterial;
             if (health <= 0)
             {
-                Destroy(gameObject);
-                Debug.Log("zombie died");
+                //Destroy(gameObject);
+                //Debug.Log("zombie died");
+                Shrink();
+               
             }
             else
             {
@@ -85,6 +92,15 @@ public class Zombie : MonoBehaviour
         //default material
         rend.material = defaultMaterial;
     }
+
+    void Shrink()
+    {
+        while(transform.localScale.x > 0)
+        {
+            transform.localScale -= new Vector3(.05f, .05f, .05f) * 0.05f * Time.deltaTime;
+        }
+    }
+
 
 
 
