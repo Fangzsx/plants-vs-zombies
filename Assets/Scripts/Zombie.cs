@@ -9,12 +9,14 @@ public class Zombie : MonoBehaviour
     private Material defaultMaterial;
     private Material whiteMaterial;
     private Renderer rend;
+    private bool isDead = false;
 
 
     public float health;
     public float startHealth = 10f;
     public float movementSpeed = 10f;
     public Image healthBar;
+    public float sizeChangeSpeed = 0.05f;
     
 
     private void Start()
@@ -46,6 +48,7 @@ public class Zombie : MonoBehaviour
     {
 
 
+
         Vector3 direction = target.position - transform.position;
         transform.Translate(direction.normalized * movementSpeed * Time.deltaTime, Space.World);
 
@@ -73,9 +76,9 @@ public class Zombie : MonoBehaviour
             rend.material = whiteMaterial;
             if (health <= 0)
             {
-                //Destroy(gameObject);
-                //Debug.Log("zombie died");
-                Shrink();
+                Destroy(gameObject);
+                Debug.Log("zombie died");
+                
                
             }
             else
@@ -92,17 +95,5 @@ public class Zombie : MonoBehaviour
         //default material
         rend.material = defaultMaterial;
     }
-
-    void Shrink()
-    {
-        while(transform.localScale.x > 0)
-        {
-            transform.localScale -= new Vector3(.05f, .05f, .05f) * 0.05f * Time.deltaTime;
-        }
-    }
-
-
-
-
 
 }
