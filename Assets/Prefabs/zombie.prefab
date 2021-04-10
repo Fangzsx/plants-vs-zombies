@@ -347,6 +347,7 @@ MonoBehaviour:
   startHealth: 10
   movementSpeed: 2
   healthBar: {fileID: 1493803246}
+  sizeChangeSpeed: 0.05
 --- !u!135 &1823646003942556687
 SphereCollider:
   m_ObjectHideFlags: 0

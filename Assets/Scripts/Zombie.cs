@@ -9,7 +9,6 @@ public class Zombie : MonoBehaviour
     private Material defaultMaterial;
     private Material whiteMaterial;
     private Renderer rend;
-    private bool isDead = false;
 
 
     public float health;
@@ -76,9 +75,9 @@ public class Zombie : MonoBehaviour
             rend.material = whiteMaterial;
             if (health <= 0)
             {
-                Destroy(gameObject);
-                Debug.Log("zombie died");
-                
+                //Destroy(gameObject);
+                //Debug.Log("zombie died");
+                movementSpeed = 0f; 
                
             }
             else
